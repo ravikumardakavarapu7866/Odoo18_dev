@@ -46,8 +46,7 @@ class SaleOrder(models.Model):
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
-    platform_commission_vendor = fields.Float(string='Platform Commission',
-                                              compute='_compute_platform_commission_vendor', store=True)
+    platform_commission_vendor = fields.Float(string='Platform Commission', compute='_compute_platform_commission_vendor', store=True)
 
     @api.depends('order_line.product_id', 'order_line.price_unit', 'order_line.product_qty')
     def _compute_platform_commission_vendor(self):
