@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+
+        <record id="view_sale_order_form_inherit_total_platform_commission" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.total.platform.commission</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="total_platform_commission" placeholder="Total Platform Commission" readonly="1" invisible="0"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_order_line_tree_inherit_platform_commission" model="ir.ui.view">
+            <field name="name">sale.order.line.form.readonly.inherit.platform.commission</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.sale_order_line_view_form_readonly"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_uom_qty']" position="after">
+                    <field name="platform_commission" string="Platform Commission"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_partner_form_inherit_commission_percentage" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.commission.percentage</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="commission_percentage" string="Commission %"/>
+                </xpath>
+            </field>
+        </record>
+
+         <record id="view_purchase_order_form_inherit_platform_commission_vendor" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit.platform.commission_vendor</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='project_id']" position="after">
+                    <field name="platform_commission_vendor" string="Platform Commission"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
