@@ -1,6 +1,6 @@
 from odoo import models, fields, api
 
-
+#Plat from commission under the sale order model.
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
 
@@ -29,7 +29,7 @@ class ResPartner(models.Model):
 
     commission_percentage = fields.Float(string='Commission %')
 
-
+#total commssion calculation under the sale order model
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
