@@ -42,7 +42,7 @@ class SaleOrder(models.Model):
             total_commission = sum(line.platform_commission for line in order.order_line)
             order.total_platform_commission = total_commission
 
-
+# platform commission under the Purchase order page
 class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
 
