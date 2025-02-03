@@ -23,7 +23,7 @@ class SaleOrderLine(models.Model):
             else:
                 line.platform_commission = 0.0
 
-
+#commission under the vendor page
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
