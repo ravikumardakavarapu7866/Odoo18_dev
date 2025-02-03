@@ -63,4 +63,4 @@ class PurchaseOrder(models.Model):
                     commission = (sale_price - vendor_price)
                     total_commission += commission
 
-            order.platform_commission_vendor = total_commission
+            order.platform_commission_vendor = total_commission 
